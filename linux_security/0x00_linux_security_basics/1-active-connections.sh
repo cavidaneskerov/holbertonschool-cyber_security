@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo netstat -tulpn
+sudo ss -tulpn
