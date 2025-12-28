@@ -1,2 +1,2 @@
 #!/bin/bash
-whois "$1" | awk -F': ' '/Registrant |Admin |Tech / && !/ID/ {k=$1; v=$2} /Street/ {v=v" "} /Phone Ext|Fax Ext/ {print k":, "} !/Ext/ && v!="" {print k", "v}' > "$1.csv"
+whois $1|awk -F': *' '/^(Registrant|Admin|Tech)/{k=$1;v=$2;if(k~/ Ext$/)k=k":";print (v==""?k", ":k", "v)}' > $1.csv
