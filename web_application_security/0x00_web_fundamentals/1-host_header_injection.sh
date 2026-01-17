@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -X POST -s "$2" -H  "X-Forwarded-Host:$1" -D "$3"
+curl -sS -X POST "$2" -H  "Host:$1" -D "$3"
