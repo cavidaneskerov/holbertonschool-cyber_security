@@ -1,2 +1,2 @@
 #!/bin/bash
-semanage port -a -t http_port_t
+semanage port -l | grep "http"
